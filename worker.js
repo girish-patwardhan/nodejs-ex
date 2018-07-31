@@ -13,5 +13,5 @@ self.addEventListener('push', ev => {
 
 function alertData( jsnData)
 {
-	prompt(JSON.stringify(jsnData);
+	prompt(JSON.stringify(jsnData));
 }
