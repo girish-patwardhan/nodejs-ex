@@ -12,7 +12,7 @@ webpush.setVapidDetails('mailto:reach.to.girish@gmail.com', publicVapidKey, priv
 
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
-
+var loneSubscriber;
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
@@ -104,13 +104,27 @@ app.get('/pagecount', function (req, res) {
 app.use(require('body-parser').json());
 
 app.post('/subscribe', (req, res) => {
-  const subscription = req.body;
+  //const subscription = req.body;
+  loneSubscriber = req.body;
   res.status(201).json({});
   const payload = JSON.stringify({ title: 'test' });
 
-  console.log(subscription);
+  console.log(loneSubscriber);
 
-  webpush.sendNotification(subscription, payload).catch(error => {
+  webpush.sendNotification(loneSubscriber, payload).catch(error => {
+    console.error(error.stack);
+  });
+});
+
+app.post('/sendMessageToClient', (req, res) => {
+  //const subscription = req.body;
+  //loneSubscriber = req.body;
+  res.status(201).json({});
+  var payload = JSON.stringify({ title: 'set_new_value' });
+	payload.title = req.body.msg;
+  //console.log(subscription);
+
+  webpush.sendNotification(loneSubscriber, payload).catch(error => {
     console.error(error.stack);
   });
 });
