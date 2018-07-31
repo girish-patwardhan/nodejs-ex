@@ -6,6 +6,12 @@ self.addEventListener('push', ev => {
   /*self.registration.showNotification(data.title, {
     body: 'Hello, World GP!',
     icon: 'http://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png'
-  });*/
-  alert(data.title);
+  });
+  */
+  alertData(data);
 });
+
+function alertData( jsnData)
+{
+	prompt(JSON.stringify(jsnData);
+}
