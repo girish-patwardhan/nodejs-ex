@@ -97,10 +97,6 @@ app.get('/pagecount', function (req, res) {
   }
 });
 
-
-
-
-
 app.use(require('body-parser').json());
 
 app.post('/subscribe', (req, res) => {
@@ -120,8 +116,10 @@ app.post('/sendMessageToClient', (req, res) => {
   //const subscription = req.body;
   //loneSubscriber = req.body;
   res.status(201).json({});
-  var payload = JSON.stringify({ title: 'set_new_value' });
-	payload.title = req.body.msg;
+  //var payload = JSON.stringify({ title: 'set_new_value' });
+  var payload = req.body.msg;
+	//payload.title = req.body.msg;
+	
   //console.log(subscription);
 
   webpush.sendNotification(loneSubscriber, payload).catch(error => {
