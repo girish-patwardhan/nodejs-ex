@@ -4,6 +4,11 @@ var express = require('express'),
     morgan  = require('morgan');
     
 Object.assign=require('object-assign')
+const webpush = require('web-push');
+
+const publicVapidKey = "BJDV2UtuOj35ywfQnhgStMD_6KWQdI6aRa0Tq7J8laG9CBEZcng7_3bR23MdJOBA-GaXyL2mDiQXHxY8JwSVcG8"; //process.env.PUBLIC_VAPID_KEY;
+const privateVapidKey = "jtvj6H21BJ63Qimb0l3ptd3zAKQ7jsdcUTtyTbyagFc"; //process.env.PRIVATE_VAPID_KEY;
+webpush.setVapidDetails('mailto:reach.to.girish@gmail.com', publicVapidKey, privateVapidKey);
 
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
@@ -92,6 +97,26 @@ app.get('/pagecount', function (req, res) {
   }
 });
 
+
+
+
+
+app.use(require('body-parser').json());
+
+app.post('/subscribe', (req, res) => {
+  const subscription = req.body;
+  res.status(201).json({});
+  const payload = JSON.stringify({ title: 'test' });
+
+  console.log(subscription);
+
+  webpush.sendNotification(subscription, payload).catch(error => {
+    console.error(error.stack);
+  });
+});
+
+app.use(require('express-static')('./'));
+
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
@@ -101,7 +126,6 @@ app.use(function(err, req, res, next){
 initDb(function(err){
   console.log('Error connecting to Mongo. Message:\n'+err);
 });
-
 app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
