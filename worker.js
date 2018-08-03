@@ -7,13 +7,13 @@ self.addEventListener('push', ev => {
 });
 
 function createGist(opts) {
-  ChromeSamples.log('Posting request to GitHub API...');
+  console.log('Posting request to GitHub API...');
   fetch('http://localhost:4500/notify', {
     method: 'post',
     body: JSON.stringify(opts)
   }).then(function(response) {
     return response.json();
   }).then(function(data) {
-    ChromeSamples.log('Sent Notification , response json is :', data);
+    console.log('Sent Notification , response json is :', data);
   });
 }
