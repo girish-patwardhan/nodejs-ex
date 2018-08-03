@@ -3,15 +3,17 @@ console.log('Loaded service worker!');
 self.addEventListener('push', ev => {
   const data = ev.data.json();
   console.log('Got push', data);
-  /*self.registration.showNotification(data.title, {
-    body: 'Hello, World GP!',
-    icon: 'http://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png'
-  });
-  */
-  alertData(data);
+  createGist(data);
 });
 
-function alertData( jsnData)
-{
-	prompt(JSON.stringify(jsnData));
+function createGist(opts) {
+  ChromeSamples.log('Posting request to GitHub API...');
+  fetch('http://localhost:4500/notify', {
+    method: 'post',
+    body: JSON.stringify(opts)
+  }).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    ChromeSamples.log('Sent Notification , response json is :', data);
+  });
 }
