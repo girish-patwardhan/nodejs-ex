@@ -103,7 +103,7 @@ app.post('/subscribe', (req, res) => {
   //const subscription = req.body;
   loneSubscriber = req.body;
   res.status(201).json({});
-  const payload = JSON.stringify({ title: 'test' });
+  const payload = JSON.stringify({ title: 'test' ,actionName: 'startshow'});
 
   console.log(loneSubscriber);
 
