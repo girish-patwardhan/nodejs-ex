@@ -194,6 +194,7 @@ function popupOpenClose(popup) {
 		if ($(".formElementError").is(':visible')) {
 			$(".formElementError").remove();
 		}
+		$("#shPlayer").stop();
 		$(popup).hide();
 	});
 }
