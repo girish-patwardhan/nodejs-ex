@@ -163,13 +163,26 @@ p {
 	</td>
 	<tr>
 	<td colspan=3>
-	<img id="shImage" src="./data/sh1.jpg"/>
+	<img id="shImage" onclick="switchImage(this);" src="./data/sh1.jpg"/>
 	</td>
 	</tr>
 	</table>
 </div>
 </body>
 <script lang="javascript">
+function switchImage(img)
+{
+	var nSrc = img.src.toString();
+	if(nSrc.indexOf('mn')>0)
+	{
+		img.src = nSrc.replace('mn.jpg','.jpg');
+	}
+	else
+	{
+		img.src = nSrc.replace('.jpg','mn.jpg');
+	}
+}
+	
 function popupOpenClose(popup) {
 	
 	/* Add div inside popup for layout if one doesn't exist */
