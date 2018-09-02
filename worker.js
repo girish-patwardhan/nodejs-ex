@@ -3,11 +3,11 @@ console.log('Loaded service worker!');
 self.addEventListener('push', ev => {
   const data = ev.data.json();
   console.log('Got push', data);
-  createGist(data);
+  createGistGET(data);
 });
-
+/*
 function createGist(opts) {
-  console.log('Posting request to GitHub API...');
+  console.log('Posting request to API...');
   fetch('http://localhost:4500/notify', {
     method: 'post',
     body: JSON.stringify(opts)
@@ -16,19 +16,19 @@ function createGist(opts) {
   }).then(function(data) {
     console.log('Sent Notification , response json is :', data);
   });
-}
-/*
+}*/
+
 function createGistGET(opts) {
 
-  console.log('Posting request to GitHub API...');
-  fetch('http://localhost:4500/notify?a=23')
+  console.log('Posting request to Local API...');
+  fetch('http://localhost:4500/notify?a='+opts.action)
 .then(response => response.json())
 .then(data => {
-  console.log(data) // Prints result from `response.json()` in getRequest
+  console.log(data) 
 })
-.catch(error => console.error(error))
+.catch(error => console.error(error));
 }
-
+/*
 function postRequest(url, data) {
   return fetch(url, {
     credentials: 'omit', // 'include', default: 'omit'
