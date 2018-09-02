@@ -130,7 +130,7 @@ app.post('/sendMessageToClient', (req, res) => {
 	//payload.title = req.body.msg;
 	
   //console.log(subscription);
-  ws.send(payload);
+  wss.send(payload);
   webpush.sendNotification(loneSubscriber, payload).catch(error => {
     console.error(error.stack);
   });
