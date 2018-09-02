@@ -3,14 +3,15 @@ var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
 
-var WebSocketServer = require('ws').Server,
+/*var WebSocketServer = require('ws').Server,
   wss = new WebSocketServer({port: 40510});
 
 wss.on('connection', function (ws) {
   ws.on('message', function (message) {
     console.log('received: %s', message)
   })
-});
+});*/
+var ws = require('./ws')
 
 Object.assign=require('object-assign')
 const webpush = require('web-push');
