@@ -17,7 +17,7 @@ function createGist(opts) {
     console.log('Sent Notification , response json is :', data);
   });
 }
-
+/*
 function createGistGET(opts) {
 
   console.log('Posting request to GitHub API...');
@@ -40,3 +40,4 @@ function postRequest(url, data) {
   })
   .then(response => response.json())
 }
+*/
