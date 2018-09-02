@@ -2,7 +2,16 @@
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
-    
+
+var WebSocketServer = require('ws').Server,
+  wss = new WebSocketServer({port: 40510});
+
+wss.on('connection', function (ws) {
+  ws.on('message', function (message) {
+    console.log('received: %s', message)
+  })
+});
+
 Object.assign=require('object-assign')
 const webpush = require('web-push');
 
@@ -115,13 +124,13 @@ app.post('/subscribe', (req, res) => {
 app.post('/sendMessageToClient', (req, res) => {
   //const subscription = req.body;
   //loneSubscriber = req.body;
-  res.status(201).json({});
+  res.status(200).json({});
   //var payload = JSON.stringify({ title: 'set_new_value' });
   var payload = JSON.stringify(req.body);
 	//payload.title = req.body.msg;
 	
   //console.log(subscription);
-
+  ws.send(payload);
   webpush.sendNotification(loneSubscriber, payload).catch(error => {
     console.error(error.stack);
   });
