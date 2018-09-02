@@ -14,7 +14,8 @@
 	"body-parser": "^1.18.2",
     "express": "^4.16.3",
     "express-static": "^1.2.5",
-    "web-push": "^3.3.0"
+    "web-push": "^3.3.0",
+    "ws": "^3.2.0"
   },
   "engine": {
     "node": "*",
