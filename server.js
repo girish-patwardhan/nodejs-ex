@@ -122,6 +122,21 @@ app.post('/subscribe', (req, res) => {
   });
 });
 
+app.get('/sendmsg/:actionname',(req, res) => {
+  //const subscription = req.body;
+  //loneSubscriber = req.body;
+  //res.status(200).json({});
+  //var payload = JSON.stringify({ title: 'set_new_value' });
+  var payload = JSON.stringify(req.params.actionname);
+	//payload.title = req.body.msg;
+	
+  //console.log(subscription);
+  //wss.send(payload);
+  webpush.sendNotification(loneSubscriber, payload).catch(error => {
+    console.error(error.stack);
+  });
+});
+
 app.post('/sendMessageToClient', (req, res) => {
   //const subscription = req.body;
   //loneSubscriber = req.body;
