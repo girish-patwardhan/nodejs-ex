@@ -127,7 +127,7 @@ app.get('/sendmsg',(req, res) => {
   //loneSubscriber = req.body;
   res.status(200).json({});
   //var payload = JSON.stringify({ title: 'set_new_value' });
-  var payload = '{ "action":"' + req.query.actionname +'"}');
+  var payload = '{ "action":"' + req.query.actionname +'"}';
 	//payload.title = req.body.msg;
 	
   //console.log(subscription);
