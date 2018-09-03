@@ -124,12 +124,12 @@ app.post('/subscribe', (req, res) => {
 
 app.get('/sendmsg',(req, res) => {
   //const subscription = req.body;
+	console.log('received GET call' + req.query);
   //loneSubscriber = req.body;
   res.status(200).json({});
   //var payload = JSON.stringify({ title: 'set_new_value' });
   var payload = '{ "action":"' + req.query.actionname +'"}';
-	//payload.title = req.body.msg;
-	
+
   //console.log(subscription);
   //wss.send(payload);
   webpush.sendNotification(loneSubscriber, payload).catch(error => {
@@ -138,6 +138,7 @@ app.get('/sendmsg',(req, res) => {
 });
 
 app.post('/sendMessageToClient', (req, res) => {
+	console.log('received POST call' + req.query);
   //const subscription = req.body;
   //loneSubscriber = req.body;
   res.status(200).json({});
