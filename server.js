@@ -125,9 +125,9 @@ app.post('/subscribe', (req, res) => {
 app.get('/sendmsg',(req, res) => {
   //const subscription = req.body;
   //loneSubscriber = req.body;
-  //res.status(200).json({});
+  res.status(200).json({});
   //var payload = JSON.stringify({ title: 'set_new_value' });
-  var payload = JSON.stringify(req.params.actionname);
+  var payload = JSON.stringify(req.query.actionname);
 	//payload.title = req.body.msg;
 	
   //console.log(subscription);
