@@ -1,8 +1,8 @@
 //  OpenShift sample Node application
 var express = require('express'),
     app     = express(),
-    morgan  = require('morgan'),
-    Feed = require('feed');
+    morgan  = require('morgan');
+const Feed = require('feed');
 
 /*var WebSocketServer = require('ws').Server,
   wss = new WebSocketServer({port: 40510});
