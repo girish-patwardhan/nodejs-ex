@@ -1,7 +1,8 @@
 //  OpenShift sample Node application
 var express = require('express'),
     app     = express(),
-    morgan  = require('morgan');
+    morgan  = require('morgan'),
+    Feed = require('feed');
 
 /*var WebSocketServer = require('ws').Server,
   wss = new WebSocketServer({port: 40510});
@@ -151,6 +152,73 @@ app.post('/sendMessageToClient', (req, res) => {
   webpush.sendNotification(loneSubscriber, payload).catch(error => {
     console.error(error.stack);
   });
+});
+
+app.get('/feed/rss/sie', function (req, res) {
+
+    // Get the posts from the database or whatever data store you are using, I am simply goin to use in memory array
+    var posts = [
+        {
+            title: "Post 1",
+            summary: "Post 1 summary",
+            content: "Post 1 content",
+            pubdate: new Date(),
+            slug: 'post-1'
+        },
+        {
+            title: "Post 2",
+            summary: "Post 2 summary",
+            content: "Post 2 content",
+            pubdate: new Date(),
+            slug: "post-2"
+        },
+        {
+            title: "Post 3",
+            summary: "Post 3 summary",
+            content: "Post 3 content",
+            pubdate: new Date(),
+            slug: "post-3"
+        },
+        {
+            title: "Post 4",
+            summary: "Post 4 summary",
+            content: "Post 4 content",
+            pubdate: new Date(),
+            slug: "post-4"
+        }
+    ];
+
+    // Instantiate feed object
+
+    var feed = new Feed({
+        title: 'Example',
+        description: "An interesting site which talks sense",
+        link: "http://example.com"
+    });
+
+    //add posts
+
+    posts.forEach(function (p) {
+        feed.addItem({
+            title: p.title,
+            link: "http://example.com/" + p.slug,
+            description: p.summary,
+            date: p.pubdate
+        });
+    });
+
+    //add categories
+
+    feed.addCategory('Technology');
+    feed.addCategory('Programming');
+    feed.addCategory('Web Development');
+
+    //render xml in rss or atom format depending upon the url param
+
+    var feedRes = feed.render('rss-2.0');
+    
+    res.set('Content-Type', 'text/xml');
+    res.send(feedRes);
 });
 
 app.use(require('express-static')('./'));
