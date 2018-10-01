@@ -16,6 +16,7 @@
     "express-static": "^1.2.5",
     "web-push": "^3.3.0",
     "ws": "^3.2.0",
+	  "babel-upgrade":"^0.0.23",
     "luxon": "^1.4.1",
     "xml": "^1.0.1",
     "feed": "^2.0.1"
