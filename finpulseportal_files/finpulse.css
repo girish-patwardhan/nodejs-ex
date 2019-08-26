@@ -1,0 +1,124 @@
+body {
+	line-height: 1.25;
+}
+
+.btn-outline-primary {
+    color: #09508c;
+    background-color: transparent;
+    background-image: none;
+    border-color: #09508c;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #09508c;
+    border-color: #09508c;
+}
+
+.btn:hover{
+	background-color: #09508c;
+    border-color: #09508c;
+}
+
+.btn-outline-primary-login {
+    color: #09508c;
+    background-color: transparent;
+    background-image: none;
+    border-color: #09508c;
+}
+
+.btn-outline-primary-login-vh {
+    color: #47ad47;
+    background-color: transparent;
+    background-image: none;
+    border-color: #47ad47;
+}
+
+.btn-outline-primary-login:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #09508c;
+    border-color: #09508c;
+}
+
+.btn-outline-primary-login-vh:hover{
+	background-color: #47ad47;
+    border-color: #47ad47;
+	color:#fff;
+}
+
+.btn-outline-primary-login:hover{
+	background-color: #09508c;
+    border-color: #09508c;
+	color:#fff;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.col-lg-3 {
+	position: relative;
+    width: 50%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+a {
+	color:#09508c;
+	font-size: 1.15rem;
+}
+
+.jumbotron {
+    padding: 1rem 1rem;
+}
+#footer-social .social-col {
+    display: inline-block;
+    float: left;
+    width: 100%;
+}
+#footer-social .social-list {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    float: none;
+}
+#footer-social .social-list li {
+    display: inline-block;
+    float: left;
+}
+#footer-social .social-list li a:link, #footer-social .social-list li a:visited {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 33px;
+    height: 33px;
+    font-size: 21px;
+    color: #595959;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.bg-dark {
+	background-color: #fff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: #09508c;
+}
+ .navbar-dark .navbar-nav .show>.nav-link {
+    color: #09508c;
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #09508c;
+}
+.navbar-dark .navbar-toggler {
+	background-color: #09508c;
+	border-color: #09508c;
+}
+

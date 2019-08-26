@@ -1,0 +1,360 @@
+﻿body {
+	background: #09508c 
+}
+#content:after {
+	background: #09508c 
+}
+
+/* body {
+	background: #FFF url("../images/prelogin.jpg") no-repeat fixed center center;
+	background: rgba(0, 0, 0, 0) url("../images/prelogin.jpg") no-repeat fixed center center / cover;
+	margin: 0 auto;
+	position: relative;
+}
+#content:after {
+	background: #FFF url("../images/prelogin_blurred.jpg") no-repeat fixed center center;
+	background: rgba(0, 0, 0, 0) url("../images/prelogin_blurred.jpg") no-repeat fixed center center / cover;
+} */
+
+.datatile body,
+.datatile #content:after {
+	background: none;
+}
+
+.datatile #wrap {
+	top: 0 !important;
+}
+
+.datatile #content {
+	box-shadow: 0 0 0;
+}
+
+body #wrap {
+	min-width: 1152px;
+	width: 66.67%;
+}
+
+@media (max-width: 1279px) {
+	body #wrap {
+	left: 7%;
+	top: 40px;
+	}
+}
+
+@media (min-width: 1280px) {
+	body #wrap {
+		left: 50%;
+		margin: 0 0 0 -33.33%;
+	}
+}
+
+@media (min-width: 1280px) and (max-width: 1728px) {
+	body #wrap {
+		margin: 0 0 0 -576px;
+	}
+}
+
+@media (min-width: 1280px) and (max-width: 1520px) {
+	body #wrap {
+		margin: 0 0 0 -40%;
+		width: 80%;
+	}
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+	body #wrap {
+		margin: 0 0 0 -576px;
+	}
+}
+
+body.passthru #wrap,
+.datatile #wrap {
+	width: 100%;
+	left: 0;
+	margin: 0;
+}
+
+body.passthru {
+	background: none;
+}
+
+.passthru #main {
+    min-height: 100vh !important;
+}
+
+#wrap {
+	opacity: 0;
+	position: absolute;
+	
+	-webkit-transition: opacity 0.4s ease-in-out;
+	transition: opacity 0.4s ease-in-out;
+}
+body.ready #wrap {
+	opacity: 1;
+}
+
+#content {
+	box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.25);
+	position: relative;
+}
+
+#main {
+	padding: 0.5rem 1.25rem 2rem;
+}
+
+#main.withSidebar {
+	width: 75%;
+}
+
+#sidebar {
+	padding: calc(0.5rem + 6rem + 1rem) 1rem 0.5rem; /* #main padding + .logo height + #features padding */
+	position: relative;
+	width: 25%;
+}
+
+.logo {
+	background: rgba(0, 0, 0, 0) url("../images/loginlogo.png") no-repeat scroll center center;
+	display: block;
+	height: 6rem;
+	margin: 0 0 2.5rem;
+}
+
+.logo + .title h1 {
+	padding: 0;
+}
+
+.isPrelogin .title h1 .subjectIndicator {
+	display: none;
+}
+
+#features {
+	list-style: none;
+	padding: 0 0 1rem;
+}
+
+#features li {
+	display: inline-block;
+	padding: 1rem 1rem 1rem 6rem;
+	vertical-align: top;
+	width: 50%;
+}
+#features li:before {
+	content: "";
+	display: block;
+	height: 4rem;
+	margin: 0 0 -4rem -5rem;
+	width: 4rem;
+}
+#features li:nth-child(1):before {
+	background: rgba(0, 0, 0, 0) url("../images/quicklinks/medical_advice.png") no-repeat center center;
+}
+#features li:nth-child(2):before {
+	background: rgba(0, 0, 0, 0) url("../images/quicklinks/test_results.png") no-repeat center center;
+}
+#features li:nth-child(3):before {
+	background: rgba(0, 0, 0, 0) url("../images/quicklinks/medications.png") no-repeat center center;
+}
+#features li:nth-child(4):before {
+	background: rgba(0, 0, 0, 0) url("../images/quicklinks/calendar.png") no-repeat center center;
+}
+
+#features .info {
+	font-size: 0.9rem;
+}
+
+#signup {
+	text-align: center;
+}
+
+#signup .header {
+	color: inherit;
+	font-size: 0.9rem;
+	font-weight: normal;
+	padding: 0;
+}
+
+#signup span {
+	display: block;
+}
+
+.badges {
+	display: inline-block;
+	vertical-align: bottom;
+	width: 16rem;
+	margin-top: -115px; /* adjusted badges */
+}
+
+.badges a {
+  display: inline-block;
+	margin: 0 0.25rem;
+	vertical-align: bottom;
+}
+.badges a:first-child {
+	margin: 0 0.25rem 0 0;
+}
+.badges a:last-child {
+	margin: 0 0 0 0.25rem;
+}
+
+.badges .badge {
+  width: 7.5rem;
+  vertical-align: bottom;
+}
+
+.links {
+	display: inline-block;
+	font-size: 0.8rem;
+	text-align: right;
+	vertical-align: bottom;
+	width: calc(100% - 16rem);
+}
+
+.links a {
+	display: inline-block;
+	margin: 0 0.25rem;
+}
+.links a:first-child {
+  margin: 0 0.25rem 0 0;
+}
+.links a:last-child {
+  margin: 0 0 0 0.25rem;
+}
+
+.loginAlerts,
+.alertHeader {
+	text-align: center;
+}
+
+.loginAlerts .card,
+.alertHeader .card {
+	padding: 0.5rem;
+}
+
+.alertHeader {
+	padding: 0.75rem 0 1rem;
+}
+.alertHeader:empty {
+	padding: 0;
+}
+
+.loginAlerts {
+	margin: calc(-6rem - 1rem) 0 1rem; /* .logo height + #features padding */
+	min-height: 6rem;
+	position: relative;
+}
+#localeswitch + loginAlerts {
+  margin: calc(-6rem - 1rem + 1.25rem) 0 1rem;
+}
+
+.loginAlerts .errorMessage {
+	bottom: -15px;
+	position: absolute;
+}
+
+.loginAlerts span,
+.alertHeader span {
+	display: block;
+}
+
+.loginAlerts img,
+.alertHeader img {
+	display: block;
+	height: 2.5rem;
+	margin: 0 auto;
+	width: 2.5rem;
+}
+
+.login input {
+	width: 100%;
+}
+
+.login input.button {
+	margin: 0.5rem 0;
+}
+
+.login .recovery {
+	font-size: 0.8rem;
+	margin: 0.5rem 0 0;
+	text-align: center;
+}
+
+.login .recovery a {
+	display: inline-block;
+	width: 50%;
+}
+
+#footer {
+	background: none;
+	position: relative;
+	z-index: 10;
+}
+
+#footer .mainStyle {
+	padding-top: 2rem;
+	width: 75%
+}
+
+#footer .sidebarStyle {
+	padding-top: 2rem;
+	width: 25%;
+}
+
+.copyright {
+	display: block;
+	font-size: 0.55rem;
+	text-align: center;
+	width: 100%;
+}
+
+.copyyear {
+	white-space: nowrap;
+}
+
+.pretext + form {
+  margin: 0.75rem 0 0;
+}
+
+.formsection label + .helptext,
+.formsection legend + .helptext {
+  margin: 0 0 0.25rem;
+}
+
+#localeswitch.prelogin {
+  top: -7rem;
+}
+
+/* Lightboxes */
+.lb_content {
+	left: 35%;
+	width: 90%;
+}
+
+/* Specific Pages */
+/* FAQ */
+hr {
+	margin: 1rem 0;
+}
+
+.faq {
+	margin: 0 0 1rem;
+}
+
+.faq ul {
+	margin: 0.75rem 0 0.75rem 1rem;
+}
+
+.faq h3 {
+	padding: 0.75rem 0 0;
+}
+/* This is used to prevent captcha from strentching across the page when signing up for MyChart */
+body > div {
+ 	Width: auto;
+}
+
+/*Add background image to instant activation page so looks better on computer screen*/
+@media screen and (min-width: 768px){
+	.mobile .instantactivation,
+	.mobile .instactconfirmation {
+		background: url(../images/prelogin.jpg) no-repeat fixed center center / cover;
+	}
+}
