@@ -6,6 +6,11 @@ if ('serviceWorker' in navigator) {
   run().catch(error => console.error(error));
 }
 
+function showMyData(d)
+{
+	alert(d);
+}
+
 async function run() {
   console.log('Registering service worker');
   const registration = await navigator.serviceWorker.
