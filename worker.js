@@ -21,12 +21,13 @@ function createGist(opts) {
 function createGistGET(opts) {
 
   console.log('Posting request to Local API...');
-  fetch('http://localhost:4500/notify?a='+opts.action)
+  showMyData(opts);
+  /*fetch('http://localhost:4500/notify?a='+opts.action)
 .then(response => response.json())
 .then(data => {
   console.log(data) 
 })
-.catch(error => console.error(error));
+.catch(error => console.error(error));*/
 }
 /*
 function postRequest(url, data) {
