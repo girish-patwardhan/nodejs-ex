@@ -5,6 +5,12 @@ self.addEventListener('push', ev => {
   console.log('Got push', data);
   createGistGET(data);
 });
+
+self.addEventListener('message', function(event){
+    console.log("SW Received Message: " + event.data);
+    event.ports[0].postMessage("SW Says 'Hello back!'");
+});
+
 /*
 function createGist(opts) {
   console.log('Posting request to API...');
