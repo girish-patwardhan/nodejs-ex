@@ -3,7 +3,8 @@ console.log('Loaded service worker!');
 self.addEventListener('push', ev => {
   const data = ev.data.json();
   console.log('Got push', data);
-  createGistGET(data);
+  ev.ports[0].postMessage("SW Says 'Hello back!'");
+  //createGistGET(data);
 });
 
 self.addEventListener('message', function(event){
