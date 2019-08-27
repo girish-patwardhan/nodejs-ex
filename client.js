@@ -2,13 +2,19 @@ const publicVapidKey = 'BJDV2UtuOj35ywfQnhgStMD_6KWQdI6aRa0Tq7J8laG9CBEZcng7_3bR
 
 if ('serviceWorker' in navigator) {
   console.log('Registering service worker');
-
+  
+  // Handler for messages coming from the service worker
+  navigator.serviceWorker.addEventListener('message', function(event){
+        console.log("Client Received Message: " + event.data);
+	alert(event.data);
+        //event.ports[0].postMessage("Client 1 Says 'Hello back!'");
+    });
+	
   run().catch(error => console.error(error));
 }
 
-function showMyData(d)
-{
-	alert(d);
+if('serviceWorker' in navigator){
+    
 }
 
 async function run() {
