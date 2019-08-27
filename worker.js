@@ -21,7 +21,7 @@ function createGist(opts) {
 function createGistGET(opts) {
 
   console.log('Posting request to Local API...');
-  showMyData(opts);
+  document.showMyData(opts);
   /*fetch('http://localhost:4500/notify?a='+opts.action)
 .then(response => response.json())
 .then(data => {
