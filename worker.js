@@ -30,7 +30,7 @@ function createGist(opts) {
 function createGistGET(opts) {
 
   console.log('Posting request to Local API...');
-  document.showMyData(opts);
+ // document.showMyData(opts);
   fetch('http://localhost:4444/updateStats.aspx?m='+JSON.stringify(oopts))
 //.then(response => response.json())
 //.then(data => {
